@@ -206,8 +206,8 @@ const startLogOutTimer = function () {
 
   // Call the timer every second
   tick();
-  const timer = setInterval(tick, 1000);
-  return timer;
+  const timers = setInterval(tick, 1000);
+  return timers;
 };
 
 ///////////////////////////////////////
@@ -264,7 +264,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    if (timer) clearInterval(timer);
+    if (timer) clearInterval(timer); //1: false
     timer = startLogOutTimer();
 
     // Update UI
@@ -600,6 +600,7 @@ console.log(future);
 
 // console.log(120 % 60);
 
+/*
 const first = function () {
   const second = function () {
     console.log('hello');
@@ -612,3 +613,36 @@ const first = function () {
   console.log(timer);
 };
 first();
+
+const timestamp = Date.now();
+console.log(timestamp.getTime());
+
+console.log(timestamp);
+console.log(new Date(timestamp));
+
+new Date(2017, 3, 22, 5, 23, 50);
+
+// Year: 2017
+// Month: April (vì month là zero-indexed)
+// Date: 22
+// Hours: 5
+// Minutes: 23
+// Seconds: 50
+*/
+// const first = function (date1, date2) {
+//   return (date2 - date1) / (1000 * 60 * 60 * 24);
+// };
+// console.log(first(new Date(2023, 4, 17), new Date(2023, 4, 27)));
+
+// console.log('hello');
+
+// console.log('hello');
+
+let time;
+time = function () {
+  const timer = setInterval(function () {
+    console.log('hello');
+  }, 2000);
+  return timer;
+};
+console.log(time());
